@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package examplegrpc;
+
+// Interface exported by the server
+service ExampleGrpc {
+    // A simple RPC.
+    // Returns the name of the client that invoked the RPC.
+    rpc getMyName(NameRequest) returns (NameResponse) {}
+}
+
+// Message type definitions
+// Name request object containing the client provided name
+message NameRequest {
+    string name = 1;
+}
+// Name response object containing the client provided name relayed back
+message NameResponse {
+    string name = 1;
+}
